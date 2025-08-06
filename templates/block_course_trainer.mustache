@@ -1,0 +1,28 @@
+{{#users}}
+<div class="trainer-entry">
+    {{{userpic}}}
+    <br>
+    <strong>{{username}}</strong>
+    <br>
+    <a href="{{useremail}}">{{useremail}}</a>
+    <br>
+    <small>
+        {{#courses}}
+            Further courses as a trainer ({{othercoursescount}}): 
+            <li><a href="{{url}}">{{fullname}}</a></li>
+        {{/courses}}
+
+        {{^courses}}
+            No further courses found.
+        {{/courses}}
+    </small>
+
+    <hr>
+</div>
+{{/users}}
+
+{{^users}}
+<div class="no-trainers">
+    {{#str}} nothingtodisplay, block_course_trainer {{/str}}
+</div>
+{{/users}}
